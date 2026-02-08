@@ -1,3 +1,5 @@
-export { default as AboutPage } from "../ui/pages/about/AboutPage"
-export { default as ContactPage } from "../ui/pages/contact/ContactPage"
-export { default as HomePage } from "../ui/pages/home/HomePage"
+export { default as HeroPage } from '../ui/pages/hero/HeroPage.tsx'
+export { default as AboutPage } from '../ui/pages/about/AboutPage.tsx'
+export { default as ExpertisePage } from '../ui/pages/expertise/ExpertisePage.tsx'
+export { default as WorkPage } from '../ui/pages/work/WorkPage.tsx'
+export { default as ContactPage } from '../ui/pages/contact/ContactPage.tsx'

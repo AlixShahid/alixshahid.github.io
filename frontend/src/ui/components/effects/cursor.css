@@ -1,0 +1,25 @@
+.cur {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease), height 0.3s var(--ease),
+    background 0.3s;
+}
+
+.cur.h {
+  width: 46px;
+  height: 46px;
+  background: rgba(232, 98, 44, 0.12);
+  border: 1.5px solid var(--accent);
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .cur {
+    display: none;
+  }
+}

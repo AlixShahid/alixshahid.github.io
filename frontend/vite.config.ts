@@ -1,14 +1,11 @@
 import { defineConfig } from 'vite'
 import preact from '@preact/preset-vite'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [preact()],
-  base: "./", // make all URLs relative
-  resolve: {
-    alias: {
-      '$exporter': '/src/exporters',
+    plugins: [preact()],
+    resolve: {
+        alias: {
+            '$exporter': '/src/exporters',
+        },
     },
-  },
 })
-

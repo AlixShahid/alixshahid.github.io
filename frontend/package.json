@@ -1,20 +1,19 @@
 {
-  "name": "portfolio",
-  "homepage": "https://shaeinst.github.io/shaeinst.github.io/",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "preact": "^10.26.9"
-  },
-  "devDependencies": {
-    "@preact/preset-vite": "^2.10.2",
-    "typescript": "~5.8.3",
-    "vite": "^7.0.4"
-  }
+    "name": "ali-shahid-portfolio",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "preact": "^10.28.3"
+    },
+    "devDependencies": {
+        "@preact/preset-vite": "^2.10.3",
+        "typescript": "~5.8.3",
+        "vite": "^7.3.1"
+    }
 }
