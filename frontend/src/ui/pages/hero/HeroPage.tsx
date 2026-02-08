@@ -1,6 +1,4 @@
-import { GithubIcon } from '$exporter/component'
 import { useScrollReveal, usePreactRef } from '$exporter/hook'
-import { SOCIAL_LINKS } from '$exporter/data'
 
 import "./hero.css"
 
