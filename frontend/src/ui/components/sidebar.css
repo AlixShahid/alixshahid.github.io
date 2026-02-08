@@ -14,7 +14,6 @@
   background: rgba(250, 248, 245, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-right: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .sb-item {

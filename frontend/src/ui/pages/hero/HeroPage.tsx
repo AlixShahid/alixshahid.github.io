@@ -16,17 +16,14 @@ export default function Page() {
                     Open to opportunities
                 </div>
                 <h1 className="hero-name">
-                    <span className="first rv d2">Ali</span>
-                    <span className="last rv d3">Shahid</span>
+                    <span className="rv d2 first">Ali</span>
+                    <span className="rv d3 last">Shahid</span>
                 </h1>
                 <p className="hero-title rv d4">Software Engineer</p>
-                <div className="hero-actions rv d5">
-                    <a href="#contact" className="btn-grad" data-h>
-                        Get in touch
-                    </a>
-                    <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener" className="btn-ghost" data-h>
-                        <GithubIcon size={16} />
-                        GitHub
+                <div className="hero-scroll rv d5">
+                    <a href="#about" data-h>
+                        <div className="scroll-line" />
+                        <span>Scroll to explore</span>
                     </a>
                 </div>
             </div>

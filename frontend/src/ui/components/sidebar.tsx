@@ -58,6 +58,7 @@ export default function Sidebar() {
 
                 const isPrimary = c > 0.85
                 const isActive = item.dataset.section === activeSection
+                item.classList.toggle('active', isActive)
 
                 if (!isActive) {
                     const [dimR, dimG, dimB] = [154, 138, 120]
