@@ -12,7 +12,7 @@ export const NAV_LABELS: Record<SectionId, string> = {
 export const SOCIAL_LINKS = {
     github: 'https://github.com/AlixShahid',
     linkedin: 'https://linkedin.com/in/AlixShahid',
-    email: 'alixshahid@gmail.com',
+    email: 'contact@AlixShahid.com',
 } as const
 
 export const ABOUT_TEXT = `Software Engineer focused on building scalable, production-grade systems across the full stack. I specialize in designing event-driven microservices, real-time data pipelines, and low-latency trading infrastructure. My work spans backend architecture, API design, cross-platform mobile development, and AI-integrated platforms.

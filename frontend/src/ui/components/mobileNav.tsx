@@ -11,7 +11,7 @@ export default function MobileNav() {
     return (
         <>
             <div className="topnav">
-                <a href="#" className="tn-logo">Ali Shahid</a>
+                <a href="#" className="tn-logo">ali-shahid</a>
                 <button className="burger" onClick={() => setOpen(!open)} aria-label="Menu" data-h>
                     <span />
                     <span />
