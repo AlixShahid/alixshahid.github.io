@@ -1,0 +1,160 @@
+.bh-trigger {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    z-index: 50;
+    cursor: none;
+}
+
+.bh-canvas {
+    position: fixed;
+    z-index: 49;
+    pointer-events: none;
+    width: 400px;
+    height: 400px;
+}
+
+.bh-ui {
+    position: fixed;
+    z-index: 51;
+    pointer-events: none;
+    text-align: right;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+
+.bh-ui.on {
+    opacity: 1;
+}
+
+.bh-t {
+    font-family: 'Orbitron', sans-serif;
+    font-size: .8rem;
+    letter-spacing: 4px;
+    color: var(--red);
+    text-transform: uppercase;
+}
+
+.bh-n {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--red);
+    text-shadow: 0 0 20px rgba(232, 64, 64, 0.5);
+    margin: 4px 0;
+}
+
+.bh-s {
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+}
+
+/* white hole */
+.wh-flash {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.5s;
+}
+
+.wh-flash.on {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.wh-center {
+    position: fixed;
+    z-index: 201;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s;
+    pointer-events: none;
+}
+
+.wh-center.on {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.wh-orb-wrap {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wh-orb {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff 0%, rgba(32, 194, 14, 0.3) 40%, transparent 70%);
+    box-shadow:
+        0 0 60px rgba(255, 255, 255, 0.5),
+        0 0 120px rgba(32, 194, 14, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex-shrink: 0;
+}
+
+.wh-orb:hover {
+    transform: scale(1.1);
+    box-shadow:
+        0 0 80px rgba(255, 255, 255, 0.8),
+        0 0 160px rgba(32, 194, 14, 0.4);
+}
+
+.wh-ring-svg {
+    position: absolute;
+    inset: 0;
+    width: 120px;
+    height: 120px;
+    transform: rotate(-90deg);
+    pointer-events: none;
+}
+
+.wh-ring-track {
+    fill: none;
+    stroke: rgba(32, 194, 14, 0.12);
+    stroke-width: 2;
+}
+
+.wh-ring-progress {
+    fill: none;
+    stroke: rgba(32, 194, 14, 0.7);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-dasharray: 339.292;
+    stroke-dashoffset: 339.292;
+    filter: drop-shadow(0 0 4px rgba(32, 194, 14, 0.5));
+    transition: stroke-dashoffset 0.1s linear;
+}
+
+.wh-ring-progress.charging {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 2.5s linear;
+}
+
+.wh-hint {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.45rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: 16px;
+}

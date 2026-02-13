@@ -1,142 +1,99 @@
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(100px, 15vh, 180px) clamp(32px, 6vw, 100px) 80px;
-  position: relative;
-  overflow: hidden;
+.hero-section {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
 }
 
 .hero-content {
-  max-width: 800px;
-  position: relative;
-  z-index: 2;
-  text-align: left;
+    text-align: center;
+    transition: transform 0.05s linear, opacity 0.05s linear;
 }
 
-.hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--accent);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 6px 18px;
-  border: 1px solid rgba(232, 98, 44, 0.2);
-  border-radius: 100px;
-  background: rgba(232, 98, 44, 0.04);
-  margin-bottom: 32px;
-}
-
-.pulse {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #22c55e;
-  animation: blink 2s ease-in-out infinite;
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.15;
-  }
+.hero-label {
+    font-size: 1rem;
+    color: var(--amber);
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: hero-fade 0.6s ease forwards 0.3s;
 }
 
 .hero-name {
-  font-family: var(--display);
-  font-size: clamp(56px, 9vw, 100px);
-  font-weight: 800;
-  line-height: 0.92;
-  letter-spacing: -0.04em;
-  margin-bottom: 20px;
+    font-family: 'Archivo', sans-serif;
+    font-size: clamp(3.6rem, 12vw, 8rem);
+    font-weight: 900;
+    line-height: 0.85;
+    color: var(--text-bright);
+    margin: 0.4rem 0;
+    opacity: 0;
+    animation: hero-name-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;
+    letter-spacing: -2px;
 }
 
-.hero-name .first {
-  display: block;
-  color: var(--text);
+.hero-name .ch {
+    display: inline-block;
+    animation: char-wave 5s ease-in-out infinite;
 }
 
-.hero-name .last {
-  display: block;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.hero-name .ch:nth-child(even) {
+    animation-delay: -0.3s;
 }
 
-.hero-title {
-  font-size: 20px;
-  color: var(--text-2);
-  font-weight: 300;
-  margin-bottom: 40px;
-  letter-spacing: 0.01em;
+@keyframes char-wave {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
-
-@media (max-width: 768px) {
-  .hero {
-    padding-top: clamp(100px, 20vh, 160px);
-  }
+@keyframes hero-name-in {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+        filter: blur(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
 }
 
-.hero-scroll {
-    margin-top: 56px;
+@keyframes hero-fade {
+    to {
+        opacity: 1;
+    }
 }
 
-.hero-scroll a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    font-family: var(--mono);
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--text-3);
-    transition: color 0.4s var(--ease);
+.hero-role {
+    font-family: 'Archivo', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    font-weight: 600;
+    color: var(--green);
+    opacity: 0;
+    animation: hero-fade 0.6s ease forwards 1s;
+    text-shadow: 0 0 30px rgba(var(--green-glow), 0.3);
 }
 
-.hero-scroll a:hover {
-    color: var(--accent);
+.hero-sub {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-top: 1.2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    opacity: 0;
+    animation: hero-fade 0.6s ease forwards 1.3s;
 }
 
-.hero-scroll a:hover .scroll-line::after {
-    background: var(--accent);
-    height: 50%;
-}
-
-.scroll-line {
-    width: 1px;
-    height: 48px;
-    background: rgba(0, 0, 0, 0.08);
-    border-radius: 1px;
-    position: relative;
-    overflow: hidden;
-}
-
-.scroll-line::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    background: var(--accent-3);
-    border-radius: 1px;
-    animation: scrollDrip 2s var(--ease) infinite;
-    transition: background 0.3s;
-}
-
-@keyframes scrollDrip {
-    0% { top: -40%; opacity: 0; }
-    20% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { top: 100%; opacity: 0; }
+.hero-sub b {
+    color: var(--text);
+    font-weight: 500;
 }

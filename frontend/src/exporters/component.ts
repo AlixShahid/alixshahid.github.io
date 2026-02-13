@@ -1,20 +1,9 @@
 // Effects
 export { default as Cursor } from '../ui/components/effects/cursor.tsx'
-export { default as GrainOverlay } from '../ui/components/effects/grainOverlay.tsx'
-export { default as ParticleCanvas } from '../ui/components/effects/particleCanvas.tsx'
+export { default as Noise } from '../ui/components/effects/noise.tsx'
+export { default as SolarSystem } from '../ui/components/effects/solarSystem.tsx'
+export { default as Equations } from '../ui/components/effects/equations.tsx'
+export { default as Particles } from '../ui/components/effects/particles.tsx'
 
 // Navigation
-export { default as Sidebar } from '../ui/components/sidebar.tsx'
-export { default as MobileNav } from '../ui/components/mobileNav.tsx'
-
-// Layout
-export { default as Footer } from '../ui/components/footer.tsx'
-
-// Icons
-export {
-    GithubIcon,
-    LinkedInIcon,
-    LocationIcon,
-    MailIcon,
-    ExpertiseIcon,
-} from '../ui/components/icons.tsx'
+export { default as Dock } from '../ui/components/dock.tsx'

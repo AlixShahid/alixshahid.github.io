@@ -1,28 +1,22 @@
-import { HeroPage, AboutPage, ExpertisePage, WorkPage, ContactPage } from '$exporter/page'
-import { Cursor, GrainOverlay, ParticleCanvas, Sidebar, MobileNav, Footer } from '$exporter/component'
-import { useMousePosition, useScrollSpy } from '$exporter/hook'
-import { SECTIONS } from '$exporter/data'
+import { HeroPage, Terminal, BlackHole } from '$exporter/page'
+import { Cursor, Noise, SolarSystem, Equations, Particles, Dock } from '$exporter/component'
+import { useMousePosition } from '$exporter/hook'
 
 export function App() {
     useMousePosition()
-    useScrollSpy(SECTIONS)
 
     return (
         <>
-            <GrainOverlay />
             <Cursor />
-            <ParticleCanvas />
-            <Sidebar />
-            <MobileNav />
+            <SolarSystem />
+            <Noise />
+            <Equations />
+            <Particles />
 
-            <div className="main">
-                <HeroPage />
-                <AboutPage />
-                <ExpertisePage />
-                <WorkPage />
-                <ContactPage />
-                <Footer />
-            </div>
+            <HeroPage />
+            <Terminal />
+            <Dock />
+            <BlackHole />
         </>
     )
 }

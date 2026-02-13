@@ -1,0 +1,58 @@
+.dock {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.dock:hover {
+    transform: scale(1.15);
+}
+
+.dock:hover .dock-tip {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+.dock svg {
+    width: 48px;
+    height: 48px;
+    stroke: var(--green);
+    fill: none;
+    stroke-width: 1.3;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.dock:hover svg {
+    opacity: 1;
+}
+
+.dock.active svg {
+    stroke: var(--amber);
+    opacity: 0.8;
+}
+
+.dock-tip {
+    position: absolute;
+    bottom: 46px;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    font-size: 0.60rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(var(--green-glow), 0.15);
+    padding: 5px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+}

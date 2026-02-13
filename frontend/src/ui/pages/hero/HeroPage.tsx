@@ -1,28 +1,23 @@
-import { useScrollReveal, usePreactRef } from '$exporter/hook'
+import { HERO } from '$exporter/data'
 
-import "./hero.css"
+import './hero.css'
 
-export default function Page() {
-    const ref = usePreactRef<HTMLElement>()
-    useScrollReveal(ref)
+export default function HeroPage() {
+    const chars = HERO.name.split('').map((ch, i) => (
+        <span key={i} className="ch" style={{ animationDelay: `${i * 0.06}s` }}>
+            {ch === ' ' ? '\u00a0\u00a0' : ch}
+        </span>
+    ))
 
     return (
-        <section className="hero section" id="hero" ref={ref}>
-            <div className="hero-content">
-                <div className="hero-tag rv d1">
-                    <span className="pulse" />
-                    Open to opportunities
-                </div>
-                <h1 className="hero-name">
-                    <span className="rv d2 first">Ali</span>
-                    <span className="rv d3 last">Shahid</span>
-                </h1>
-                <p className="hero-title rv d4">Software Engineer</p>
-                <div className="hero-scroll rv d5">
-                    <a href="#about" data-h>
-                        <div className="scroll-line" />
-                        <span>Scroll to explore</span>
-                    </a>
+        <section className="hero-section">
+            <div className="hero-content" id="heroContent">
+                <div className="hero-label">{HERO.label}</div>
+                <h1 className="hero-name">{chars}</h1>
+                <div className="hero-role">{HERO.role}</div>
+                <div className="hero-sub">
+                    {HERO.sub.text} <br />
+                    {HERO.sub.text2}
                 </div>
             </div>
         </section>

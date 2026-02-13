@@ -1,25 +1,55 @@
-.cur {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent);
-  pointer-events: none;
-  z-index: 10000;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s var(--ease), height 0.3s var(--ease),
-    background 0.3s;
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid var(--green);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 300000;
+    transition: transform 0.12s, border-color 0.2s;
+    mix-blend-mode: difference;
 }
 
-.cur.h {
-  width: 46px;
-  height: 46px;
-  background: rgba(232, 98, 44, 0.12);
-  border: 1.5px solid var(--accent);
+.cursor-dot {
+    width: 3px;
+    height: 3px;
+    background: var(--green);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 300001;
+    box-shadow: 0 0 6px var(--green);
+}
+
+.cursor.hover {
+    transform: scale(2.2);
+    border-color: var(--amber);
+}
+
+.cursor.danger {
+    transform: scale(3) !important;
+    border-color: var(--red) !important;
+    border-width: 2px !important;
+}
+
+.cursor-lens {
+    position: fixed;
+    pointer-events: none;
+    z-index: 299999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(var(--green-glow), 0.05);
+    box-shadow:
+        0 0 15px 2px rgba(var(--green-glow), 0.012),
+        inset 0 0 10px rgba(var(--green-glow), 0.008);
+    opacity: 1;
 }
 
 @media (hover: none) and (pointer: coarse) {
-  .cur {
-    display: none;
-  }
+    .cursor,
+    .cursor-dot,
+    .cursor-lens {
+        display: none !important;
+    }
 }

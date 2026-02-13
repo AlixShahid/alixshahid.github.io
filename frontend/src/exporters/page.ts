@@ -1,5 +1,3 @@
 export { default as HeroPage } from '../ui/pages/hero/HeroPage.tsx'
-export { default as AboutPage } from '../ui/pages/about/AboutPage.tsx'
-export { default as ExpertisePage } from '../ui/pages/expertise/ExpertisePage.tsx'
-export { default as WorkPage } from '../ui/pages/work/WorkPage.tsx'
-export { default as ContactPage } from '../ui/pages/contact/ContactPage.tsx'
+export { default as Terminal } from '../ui/pages/terminal/Terminal.tsx'
+export { default as BlackHole } from '../ui/pages/blackhole/BlackHole.tsx'

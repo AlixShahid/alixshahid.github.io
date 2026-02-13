@@ -1,19 +1,32 @@
 import { useEffect } from 'preact/hooks'
-import { usePreactRef, mouse } from '$exporter/hook'
+import { usePreactRef, mouse, bh } from '$exporter/hook'
 
-import "./cursor.css"
+import './cursor.css'
 
 export default function Cursor() {
-    const ref = usePreactRef<HTMLDivElement>()
+    const curRef = usePreactRef<HTMLDivElement>()
+    const dotRef = usePreactRef<HTMLDivElement>()
+    const lensRef = usePreactRef<HTMLDivElement>()
 
     useEffect(() => {
-        const el = ref.current
-        if (!el) return
+        const cur = curRef.current
+        const dot = dotRef.current
+        const lens = lensRef.current
+        if (!cur || !dot || !lens) return
 
+        let cx = 0
+        let cy = 0
         let animId: number
+
         const track = () => {
-            el.style.left = `${mouse.x}px`
-            el.style.top = `${mouse.y}px`
+            cx += (mouse.x - cx) * 0.15
+            cy += (mouse.y - cy) * 0.15
+            cur.style.left = `${cx + bh.cursorAttrX - 10}px`
+            cur.style.top = `${cy + bh.cursorAttrY - 10}px`
+            dot.style.left = `${mouse.x + bh.cursorAttrX * 0.3 - 1.5}px`
+            dot.style.top = `${mouse.y + bh.cursorAttrY * 0.3 - 1.5}px`
+            lens.style.left = `${cx + bh.cursorAttrX * 0.5 - 30}px`
+            lens.style.top = `${cy + bh.cursorAttrY * 0.5 - 30}px`
             animId = requestAnimationFrame(track)
         }
         track()
@@ -21,14 +34,14 @@ export default function Cursor() {
     }, [])
 
     useEffect(() => {
-        const cursor = ref.current
-        if (!cursor) return
+        const cur = curRef.current
+        if (!cur) return
 
         const onOver = (e: Event) => {
-            if ((e.target as HTMLElement).closest('[data-h]')) cursor.classList.add('h')
+            if ((e.target as HTMLElement).closest('[data-h]')) cur.classList.add('hover')
         }
         const onOut = (e: Event) => {
-            if ((e.target as HTMLElement).closest('[data-h]')) cursor.classList.remove('h')
+            if ((e.target as HTMLElement).closest('[data-h]')) cur.classList.remove('hover')
         }
 
         document.addEventListener('mouseover', onOver)
@@ -39,5 +52,11 @@ export default function Cursor() {
         }
     }, [])
 
-    return <div className="cur" ref={ref} />
+    return (
+        <>
+            <div className="cursor" ref={curRef} />
+            <div className="cursor-dot" ref={dotRef} />
+            <div className="cursor-lens" ref={lensRef} />
+        </>
+    )
 }
