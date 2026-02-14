@@ -26,7 +26,7 @@ export const SOCIAL_LINKS = {
 export const HERO = {
     name: 'ALI SHAHID',
     label: 'software engineer',
-    role: 'math  </code>  physics',
+    role: 'abstracist',
     sub: {
         text: 'it was predetermined that you would read this',
         text2: 'you were born to be here at this time',
