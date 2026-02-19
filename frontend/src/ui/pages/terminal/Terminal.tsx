@@ -190,9 +190,9 @@ export default function Terminal() {
         if (!wrapper || !isOpen) return
 
         if (termState.maximized) {
-            wrapper.style.width = `${window.innerWidth}px`
-            wrapper.style.height = `${window.innerHeight * 0.85}px`
-            wrapper.style.top = `${window.innerHeight * 0.15}px`
+            wrapper.style.width = '100%'
+            wrapper.style.height = '100%'
+            wrapper.style.top = '0px'
             wrapper.style.left = '0px'
             wrapper.style.transform = 'none'
         } else if (termState.prevBounds) {
