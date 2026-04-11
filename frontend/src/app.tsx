@@ -7,8 +7,6 @@ export function App() {
 
     return (
         <>
-            <link rel="me" /> {/* this is for the Mastodon Verification */}
-
             <Cursor />
             <SolarSystem />
             <Noise />
