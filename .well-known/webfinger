@@ -1,0 +1,18 @@
+{
+  "subject": "acct:self@AlixShahid.COM",
+  "aliases": [
+    "https://mastodon.social/@AlixShahid"
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://mastodon.social/users/AlixShahid"
+    },
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://mastodon.social/@AlixShahid"
+    }
+  ]
+}
