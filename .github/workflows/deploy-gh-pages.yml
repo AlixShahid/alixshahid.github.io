@@ -41,7 +41,13 @@ jobs:
 
       # Copy CNAME file to the build directory
       - name: Copy CNAME file
-        run: cp CNAME dist/
+        run: |
+          # ensure .nojekyll exists so Mastodon can see .well-known
+          touch dist/.nojekyll
+          # for Mastodon
+          cp -r .well-known dist/
+          # for custom domain
+          cp CNAME dist/
 
       # Push the build folder to gh-page
       - name: Deploy to gh-page branch
